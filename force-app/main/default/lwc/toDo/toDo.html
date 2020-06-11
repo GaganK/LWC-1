@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="To do" icon-name="custom:custom14">
+    
+    <template for:each={list} for:item="item">
+    <c-to-do-list
+                   key={item.key}
+                   number={item.number}
+                   title={item.title}
+                   detail={item.detail}
+                   ondelitem={onDelitem}></c-to-do-list>
+    </template>
+    
+    
+    <div class="slds-grid to-do">
+    <div class="slds-col">
+    <lightning-input label="Title" value={titleInput} onchange={onTitleInputChange}></lightning-input>
+    </div>
+    <div class="slds-col">
+    <lightning-input label="Detail" value={detailInput} onchange={onDetailInputChange}></lightning-input>
+    </div>
+    <div class="slds-col add-button">
+    <lightning-button variant="brand" label="Add" onclick={onItemSubmit}></lightning-button>
+    </div>
+    </div>
+    
+    </lightning-card>
+    </template>
